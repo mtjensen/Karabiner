@@ -592,6 +592,11 @@
     <equal>net.sourceforge.skim-app.skim</equal>
   </appdef>
 
+  <appdef>
+    <appname>BEAN</appname>
+    <equal>com.bean-osx.Bean</equal>
+  </appdef>
+
   <!-- fallback -->
   <appdef>
     <appname>JetBrainsApps</appname>
