@@ -198,8 +198,8 @@
 				<only>FIREFOX</only>
 				<autogen>
 					--KeyOverlaidModifier-- 
-					KeyCode::SHIFT_L,
-					KeyCode::SHIFT_L,
+					KeyCode::FN,
+					KeyCode::FN,
 					KeyCode::BACKQUOTE, ModifierFlag::CONTROL_L
 				</autogen>
 			</item>
