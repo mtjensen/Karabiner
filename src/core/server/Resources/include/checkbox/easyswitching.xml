@@ -21,11 +21,11 @@
 	<item>
 		<name>Easy window/tab switching</name>
 		<item>
-		<name>Tab switching</name>
-		<item>
-			<name>Quickly switch between tabs in common programs.</name>
-			<appendix>Tap option-right/command-right quickly to move left/right</appendix>
-		</item>
+			<name>Tab switching</name>
+			<item>
+				<name>Quickly switch between tabs in common programs.</name>
+				<appendix>Tap option-right/command-right quickly to move left/right</appendix>
+			</item>
 			<!-- Firefox -->
 			<item>
 				<name>Firefox</name>
