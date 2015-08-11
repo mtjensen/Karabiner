@@ -19,179 +19,190 @@
 	</replacementdef>
 
 	<item>
-	<name>Tab switching</name>
-		<!-- Firefox -->
+		<name>Easy window/tab switching</name>
 		<item>
-			<name>Option tab-switching in Firefox</name>
-			<identifier>private.shifts_tabswitch_firefox</identifier>
-			<only>FIREFOX</only>
-			<autogen>
-				{{ MOVE LEFT }}
-				KeyCode::CURSOR_LEFT, ModifierFlag::OPTION_L | ModifierFlag::COMMAND_L
-			</autogen>
+		<name>Tab switching</name>
+		<item>
+			<name>Quickly switch between tabs in common programs.</name>
+			<appendix>Tap option-right/command-right quickly to move left/right</appendix>
+		</item>
+			<!-- Firefox -->
+			<item>
+				<name>Firefox</name>
+				<identifier>private.shifts_tabswitch_firefox</identifier>
+				<only>FIREFOX</only>
+				<autogen>
+					{{ MOVE LEFT }}
+					KeyCode::CURSOR_LEFT, ModifierFlag::OPTION_L | ModifierFlag::COMMAND_L
+				</autogen>
 
-			<autogen>
-				{{ MOVE RIGHT }}
-				KeyCode::CURSOR_RIGHT, ModifierFlag::OPTION_L | ModifierFlag::COMMAND_L
-			</autogen>
+				<autogen>
+					{{ MOVE RIGHT }}
+					KeyCode::CURSOR_RIGHT, ModifierFlag::OPTION_L | ModifierFlag::COMMAND_L
+				</autogen>
+			</item>
+
+			<!-- Sublime Text -->
+			<item>
+				<name>Sublime Text</name>
+				<identifier>private.shifts_tabswitch_sublimetext</identifier>
+				<only>SUBLIMETEXT</only>
+				<autogen>
+					{{ MOVE LEFT }}
+					KeyCode::CURSOR_LEFT, ModifierFlag::OPTION_L | ModifierFlag::COMMAND_L
+				</autogen>
+
+				<autogen>
+					{{ MOVE RIGHT }} 
+					KeyCode::CURSOR_RIGHT, ModifierFlag::OPTION_L | ModifierFlag::COMMAND_L
+				</autogen>
+			</item>
+
+			<!-- Finder -->
+			<item>
+				<name>Finder</name>
+				<identifier>private.shifts_tabswitch_finder</identifier>
+				<only>FINDER</only>
+				<autogen>
+					{{ MOVE LEFT }}
+					KeyCode::TAB, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L
+				</autogen>
+
+				<autogen>
+					{{ MOVE RIGHT }} 
+					KeyCode::TAB, ModifierFlag::CONTROL_L
+				</autogen>
+			</item>
+
+			<!-- Bean -->
+			<item>
+				<name>Bean</name>
+				<identifier>private.shifts_tabswitch_bean</identifier>
+				<only>BEAN</only>
+				<autogen>
+					{{ MOVE LEFT }}
+					KeyCode::CURSOR_LEFT, ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L
+				</autogen>
+
+				<autogen>
+					{{ MOVE RIGHT }}
+					KeyCode::CURSOR_RIGHT, ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L
+				</autogen>
+			</item>
+
+			<!-- iTerm2 -->
+			<item>
+				<name>iTerm2</name>
+				<identifier>private.shifts_tabswitch_iterm2</identifier>
+				<only>TERMINAL</only>
+				<autogen>
+					{{ MOVE LEFT }}
+					KeyCode::BRACKET_LEFT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L
+				</autogen>
+
+				<autogen>
+					{{ MOVE RIGHT }}
+					KeyCode::BRACKET_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L
+				</autogen>
+			</item>
+
+			<!-- Chrome -->
+			<item>
+				<name>Chrome</name>
+				<identifier>private.shifts_tabswitch_chrome</identifier>
+				<only>GOOGLE_CHROME</only>
+				<autogen>
+					{{ MOVE LEFT }}
+					KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L
+				</autogen>
+
+				<autogen>
+					{{ MOVE RIGHT }}
+					KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L
+				</autogen>
+			</item>
+
+			<!-- Excel -->
+			<item>
+				<name>Excel</name>
+				<identifier>private.shifts_tabswitch_excel</identifier>
+				<only>EXCEL</only>
+				<autogen>
+					{{ MOVE LEFT }}
+					KeyCode::CURSOR_UP, ModifierFlag::FN | ModifierFlag::CONTROL_L
+				</autogen>
+
+				<autogen>
+					{{ MOVE RIGHT }}
+					KeyCode::CURSOR_DOWN, ModifierFlag::FN | ModifierFlag::CONTROL_L
+				</autogen>
+			</item>
+
+			<!-- Android Studio -->
+			<item>
+				<name>Android Studio</name>
+				<identifier>private.shifts_tabswitch_androidstudio</identifier>
+				<only>ANDROID_STUDIO</only>
+				<autogen>
+					{{ MOVE LEFT }}
+					KeyCode::BRACKET_LEFT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L
+				</autogen>
+				<autogen>
+					{{ MOVE RIGHT }}
+					KeyCode::BRACKET_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L
+				</autogen>
+			</item>
 		</item>
 
-		<!-- Sublime Text -->
 		<item>
-			<name>Option tab-switching in Sublime Text</name>
-			<identifier>private.shifts_tabswitch_sublimetext</identifier>
-			<only>SUBLIMETEXT</only>
-			<autogen>
-				{{ MOVE LEFT }}
-				KeyCode::CURSOR_LEFT, ModifierFlag::OPTION_L | ModifierFlag::COMMAND_L
-			</autogen>
+			<name>Miscellaneous switching</name>
 
-			<autogen>
-				{{ MOVE RIGHT }} 
-				KeyCode::CURSOR_RIGHT, ModifierFlag::OPTION_L | ModifierFlag::COMMAND_L
-			</autogen>
-		</item>
+			<!-- switch between windows with shift_R -->
+			<item>
+				<name>Switch windows of a program</name>
+				<appendix>Tap shift-left to cycle windows</appendix>
+				<identifier>private.shift_windowswitch</identifier>
+				<autogen>
+					--KeyOverlaidModifier-- 
+					KeyCode::SHIFT_R,
+					KeyCode::SHIFT_R,
+					KeyCode::BACKQUOTE, ModifierFlag::COMMAND_L
+				</autogen>
+			</item>
 
-		<!-- Finder -->
-		<item>
-			<name>Option tab-switching in Finder</name>
-			<identifier>private.shifts_tabswitch_finder</identifier>
-			<only>FINDER</only>
-			<autogen>
-				{{ MOVE LEFT }}
-				KeyCode::TAB, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L
-			</autogen>
+			<!--  switch between desktop spaces with option_L/command_L -->
+			<item>
+				<name>Switch OS X desktop spaces</name>
+				<appendix>Tap command-left/option-left to move spaces</appendix>
+				<identifier>private.command_space_switching</identifier>
+				<autogen>
+					--KeyOverlaidModifier-- 
+					KeyCode::OPTION_L, 
+					KeyCode::OPTION_L, 
+					KeyCode::CURSOR_LEFT, ModifierFlag::CONTROL_L
+				</autogen>
 
-			<autogen>
-				{{ MOVE RIGHT }} 
-				KeyCode::TAB, ModifierFlag::CONTROL_L
-			</autogen>
-		</item>
-
-		<!-- Bean -->
-		<item>
-			<name>Option tab-switching in Bean</name>
-			<identifier>private.shifts_tabswitch_bean</identifier>
-			<only>BEAN</only>
-			<autogen>
-				{{ MOVE LEFT }}
-				KeyCode::CURSOR_LEFT, ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L
-			</autogen>
-
-			<autogen>
-				{{ MOVE RIGHT }}
-				KeyCode::CURSOR_RIGHT, ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L
-			</autogen>
-		</item>
-
-		<!-- iTerm2 -->
-		<item>
-			<name>Option tab-switching in iTerm2</name>
-			<identifier>private.shifts_tabswitch_iterm2</identifier>
-			<only>TERMINAL</only>
-			<autogen>
-				{{ MOVE LEFT }}
-				KeyCode::BRACKET_LEFT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L
-			</autogen>
-
-			<autogen>
-				{{ MOVE RIGHT }}
-				KeyCode::BRACKET_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L
-			</autogen>
-		</item>
-
-		<!-- Chrome -->
-		<item>
-			<name>Option tab-switching in Chrome</name>
-			<identifier>private.shifts_tabswitch_chrome</identifier>
-			<only>GOOGLE_CHROME</only>
-			<autogen>
-				{{ MOVE LEFT }}
-				KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L
-			</autogen>
-
-			<autogen>
-				{{ MOVE RIGHT }}
-				KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L
-			</autogen>
-		</item>
-
-		<!-- Excel -->
-		<item>
-			<name>Option tab-switching in Excel</name>
-			<identifier>private.shifts_tabswitch_excel</identifier>
-			<only>EXCEL</only>
-			<autogen>
-				{{ MOVE LEFT }}
-				KeyCode::CURSOR_UP, ModifierFlag::FN | ModifierFlag::CONTROL_L
-			</autogen>
-
-			<autogen>
-				{{ MOVE RIGHT }}
-				KeyCode::CURSOR_DOWN, ModifierFlag::FN | ModifierFlag::CONTROL_L
-			</autogen>
-		</item>
-
-		<!-- Android Studio -->
-		<item>
-			<name>Option tab-switching in Android Studio</name>
-			<identifier>private.shifts_tabswitch_androidstudio</identifier>
-			<only>ANDROID_STUDIO</only>
-			<autogen>
-				{{ MOVE LEFT }}
-				KeyCode::BRACKET_LEFT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L
-			</autogen>
-			<autogen>
-				{{ MOVE RIGHT }}
-				KeyCode::BRACKET_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L
-			</autogen>
-		</item>
-	</item>
-
-	<item>
-		<name>Miscellaneous switching</name>
-		<!-- switch between windows with shift_R -->
-		<item>
-			<name>Shift_R -> switch windows</name>
-			<identifier>private.shift_windowswitch</identifier>
-			<autogen>
-				--KeyOverlaidModifier-- 
-				KeyCode::SHIFT_R,
-				KeyCode::SHIFT_R,
-				KeyCode::BACKQUOTE, ModifierFlag::COMMAND_L
-			</autogen>
-		</item>
-
-		<!--  switch between desktop spaces with option_L/command_L -->
-		<item>
-			<name>Command space switching</name>
-			<identifier>private.command_space_switching</identifier>
-			<autogen>
-				--KeyOverlaidModifier-- 
-				KeyCode::OPTION_L, 
-				KeyCode::OPTION_L, 
-				KeyCode::CURSOR_LEFT, ModifierFlag::CONTROL_L
-			</autogen>
-
-			<autogen>
-				--KeyOverlaidModifier-- 
-				KeyCode::COMMAND_L,
-				KeyCode::COMMAND_L, 
-				KeyCode::CURSOR_RIGHT, ModifierFlag::CONTROL_L       
-			</autogen>
-		</item>
-		
-		<!-- switch between firefox tab groups with shift_L --> 
-		<item>
-			<name>Firefox tab group switching</name>
-			<identifier>private.firefox_tabgroup_switching</identifier>
-			<only>FIREFOX</only>
-			<autogen>
-				--KeyOverlaidModifier-- 
-				KeyCode::SHIFT_L,
-				KeyCode::SHIFT_L,
-				KeyCode::BACKQUOTE, ModifierFlag::CONTROL_L
-			</autogen>
+				<autogen>
+					--KeyOverlaidModifier-- 
+					KeyCode::COMMAND_L,
+					KeyCode::COMMAND_L, 
+					KeyCode::CURSOR_RIGHT, ModifierFlag::CONTROL_L       
+				</autogen>
+			</item>
+			
+			<!-- switch between firefox tab groups with shift_L --> 
+			<item>
+				<name>Switch Firefox tab groups</name>
+				<appendix>Tap Function to cycle Firefox tab groups</appendix>
+				<identifier>private.firefox_tabgroup_switching</identifier>
+				<only>FIREFOX</only>
+				<autogen>
+					--KeyOverlaidModifier-- 
+					KeyCode::SHIFT_L,
+					KeyCode::SHIFT_L,
+					KeyCode::BACKQUOTE, ModifierFlag::CONTROL_L
+				</autogen>
+			</item>
 		</item>
 	</item>
 </root>
